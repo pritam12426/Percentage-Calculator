@@ -1,0 +1,15 @@
+Pritam
+  Maths_96.0
+  Hindi_89.0
+  English_85.0
+  Sst_72.0
+  Science_91.0
+Pritam got 86.60%
+
+Aman
+  Maths_72.0
+  Hindi_35.0
+  English_56.0
+  Sst_72.0
+  Science_37.0
+Aman got 54.40%
