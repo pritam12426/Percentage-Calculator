@@ -2,7 +2,7 @@
 
 ### The function Percentage calculator asks the user for their marks in 5 subjects, calculate the percentage, and prints the result and provide the result in a *Percentage_output.txt* file.
 ----
-* Inside the function, we first initialize two variables: `total_marks` and `obtained_marks.` `Total_marks` represents the total number of marks that can be obtained for the 5 subjects, and `marks` represents the number of marks the user has obtained. We set `total_marks` to 0 and `marks` to 0 at the beginning, since no marks have been obtained yet.
+* Inside the function, we first initialize two variables: `total_marks` and `marks.` `Total_marks` represents the total number of marks that can be obtained for the 5 subjects, and `marks` represents the number of marks the user has obtained. We set `total_marks` to 0 and `marks` to 0 at the beginning, since no marks have been obtained yet.
 
 * Next, the program uses a for loop to iterate over the 5 subjects. For each subject, the user is prompted to enter their marks using the `input` function. The program then converts the user's `input` to an integer using the `int` function, since the `input` function returns a string.
 
@@ -12,7 +12,7 @@ subject_list = ['Maths','Hindi','English','Sst','Science']
 
 for subject in subject_list:
     marks = float(input(f"Inset the mark of {student_name} in subject {subject}: "))
-    total_marks = total_marks + mark
+    total_marks = total_marks + marks
     file_write.write(str(f"  {subject}_{marks}\n"))
 ```
 
