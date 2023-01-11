@@ -1,19 +1,22 @@
 from playsound import playsound
 
+mylist = ['Name','English','Maths','Hindi','Sst','Science','Percentage']
+
+with open('Percentage_Output.csv', 'w') as f:
+    for hedder in mylist:
+        f.write(str(hedder))
+        if hedder != 'Percentage':
+            f.write(str(','))
+
 while True:
     student_name = input("Insert the name of sudent: ")
-    student_name = student_name.lower()
-    student_name = student_name.capitalize()
-
-    with open('Percatage_output.txt','a') as file_write:
-        with open('Percatage_output.txt') as file_read:
-            read = file_read.read()
-            if len(str(read))!=0:
-                file_write.write("\n")
-        file_write.write(f"{str(student_name)}\n")
+    student_name = student_name.lower().capitalize()
+    
+    with open('Percentage_Output.csv','a') as file_write:
+        file_write.write(f"\n{str(student_name)},")
 
         total_marks = 0
-        subject_list = ['Maths','Hindi','English','Sst','Science']
+        subject_list = ['English','Maths','Hindi','Sst','Science']
 
         for subject in subject_list:
             while True:
@@ -28,9 +31,9 @@ while True:
                     print("\tError: The Insert Value must be a number.the")
                     playsound('Contents/Error.wav')
             total_marks += marks
-            file_write.write(str(f"  {subject}_{marks}\n"))
+            file_write.write(str(f"{marks},"))
         percentage = (total_marks / 500) * 100
-        file_write.write(str(f"{student_name} got {'%.2f'% percentage}%\n"))
+        file_write.write(str(f"{'%.2f'% percentage}%"))
 
     if percentage>=60:
         print(f"\t{student_name} got {'%.2f'% percentage}% and passed with first divison.\n")
