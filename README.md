@@ -8,7 +8,7 @@
 
 ```python
 total_marks = 0
-subject_list = ['Maths','Hindi','English','Sst','Science']
+subject_list = ['English','Maths','Hindi','Sst','Science']
 
 for subject in subject_list:
     marks = float(input(f"Inset the mark of {student_name} in subject {subject}: "))
@@ -27,14 +27,15 @@ for subject in subject_list:
 
 ## Installation instructions
 ### The easiest way to use this Percentage calculator:
-1. Install [`Python compiler`](https://www.python.org/downloads/) :snake: on your local machine.
-2. Clone this project or download this repo.
-3. Delete all content of *`Percentage_output.csv.`*
-4. Fire :fire: or run this command in bash to install a `External module` called [`Play sound.`](https://pypi.org/project/playsound/)
-```bash
-pip install playsound
-``` 
-3. And you are good to go
+1. Click [here](https://github.com/pritam12426/Percentage-Calculator/releases) to download the last portable version
+2. Eextract the `Percentege.zip`
+3. After that open Percentege
+![CHOTI-DHNNO_2023_01_12_75](https://user-images.githubusercontent.com/84720825/211976108-d58549a6-6550-459c-9987-d75d770d1500.png)
+4. Run this **`.exe`** file of that folder  
+5. then you will see this screen
+![CHOTI-DHNNO_2023_01_12_69](https://user-images.githubusercontent.com/84720825/211970030-f0f68caa-152b-4cbe-8414-9e3b28fc1795.png)
+6. Start Inserting the data as per given ***instruction***
+7. And you are good to go
 
 ## Known issues
 - [x] You have to use terminal to run this program.
