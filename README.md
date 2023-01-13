@@ -1,4 +1,4 @@
-# Percentage-calculator
+![temporary](https://user-images.githubusercontent.com/84720825/212024726-9a0f0c47-597c-4683-bc81-880949263eb2.png)
 
 ### The function Percentage calculator asks the user for their marks in 5 subjects, calculate the percentage, and prints the result and provide the result in a *Percentage_output.csv* file.
 ----
@@ -12,7 +12,7 @@ subject_list = ['English','Maths','Hindi','Sst','Science']
 
 for subject in subject_list:
     marks = float(input(f"Inset the mark of {student_name} in subject {subject}: "))
-    total_marks = total_marks + marks
+    total_marks +=1
     file_write.write(str(f"{marks},"))
 ```
 
@@ -22,21 +22,22 @@ for subject in subject_list:
 
 * Finally, the program prints the percentage to the user using the `print` function and the `f` string format. The `f` string allows us to embed the value of the `percentage` variable directly into the string, so that the user can see their percentage.
 
-## This is the output example of *Percentage_output.csv*
-![CHOTI-DHNNO_EXCEL_2023_01_11_70](https://user-images.githubusercontent.com/84720825/211838001-d27f2a20-c98d-43c9-87a2-1ef6c53d2e37.png)
-
 ## Installation instructions
 ### The easiest way to use this Percentage calculator:
-1. Click [here](https://github.com/pritam12426/Percentage-Calculator/releases) to download the last portable version
-2. Eextract the `Percentege.zip`
-3. After that open Percentege
-![CHOTI-DHNNO_2023_01_12_75](https://user-images.githubusercontent.com/84720825/211976108-d58549a6-6550-459c-9987-d75d770d1500.png)
-4. Run this **`.exe`** file of that folder  
-5. then you will see this screen
-![CHOTI-DHNNO_2023_01_12_69](https://user-images.githubusercontent.com/84720825/211970030-f0f68caa-152b-4cbe-8414-9e3b28fc1795.png)
-6. Start Inserting the data as per given ***instruction***
-7. And you are good to go
+1. Click [here](https://github.com/pritam12426/Percentage-Calculator/releases) to download Percantage Calculater
+2. Eextract the `Percentege.zip` file
+3. After that open `Percantage_Calculater` folder
 
-## Known issues
+![CHOTI-DHNNO_2023_01_12_75](https://user-images.githubusercontent.com/84720825/211976108-d58549a6-6550-459c-9987-d75d770d1500.png)
+
+4. Run this **`.exe`** file of `Percantage_Calculater` folder  
+5. Start Inserting the data as per given ***instruction***
+6. At last you will get `Percentage_Output.csv` just behind of that `.exe` and look like this in Excel 👇
+
+![CHOTI-DHNNO_2023_01_12_71](https://user-images.githubusercontent.com/84720825/212041632-814f0704-3797-4f66-b458-226e1c65bf9f.png)
+
+## Known issues ❗
 - [x] You have to use terminal to run this program.
 - [ ] Currently **`GUI`** **(Graphical user interface)** is not Ceated for this project.
+<!-- ## Need help 
+### Can some one help me to Ceate the gui for this program -->
