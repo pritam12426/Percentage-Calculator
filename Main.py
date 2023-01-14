@@ -1,8 +1,21 @@
 from playsound import playsound
 
 mylist = ['Name','English','Maths','Hindi','Sst','Science','Total Marks','Percentage']
+while(True):
+    try:
+        Class = int(input("Inset only Class name in numbers: "))
+        if 0<=Class and 12>=Class:
+            break
+        else:
+            print("\tError: The marks must be between 0 and 12.")
+            playsound('Porgram_Data/Error.wav') 
+    except:
+        playsound('Porgram_Data/Error.wav')
+        print("\tTry again")
 
-with open('Percentage_Output.csv', 'w') as f:
+Class_section = input(f"Inset the the section fo class {Class}: ")
+
+with open(f'Output/Percentage_Output_of_class_{Class}{Class_section.capitalize()}.csv', 'w') as f:
     for hedder in mylist:
         f.write(str(hedder))
         if hedder != 'Percentage':
@@ -14,7 +27,7 @@ while True:
     if student_name.find("Exit") == 0:
         break
     else:
-        with open('Percentage_Output.csv','a') as file_write:
+        with open(f'Output/Percentage_Output_of_class_{Class}{Class_section.capitalize()}.csv','a') as file_write:
             file_write.write(f"\n{str(student_name)},")
 
             total_marks = 0
@@ -36,7 +49,8 @@ while True:
                 file_write.write(str(f"{marks},"))
             percentage = (total_marks / 500) * 100
             file_write.write(str(f"{total_marks}/500,"))
-            file_write.write(str(f"{'%.2f'% percentage}%"))
+            file_write.write(str(f"{'%.2f'% percentage}%,"))
+            playsound('Porgram_Data/pop.wav')
 
         if percentage>=60:
             print(f"\t{student_name} got {'%.2f'% percentage}% and passed with first divison.\n")
