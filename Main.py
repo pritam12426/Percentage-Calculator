@@ -1,33 +1,58 @@
+import os
 from playsound import playsound
 
-mylist = ['Name','English','Maths','Hindi','Sst','Science','Total Marks','Percentage']
+if(not os.path.exists("Output")):
+    os.mkdir("Output")
+while True:
+    try:
+        max_marks = int(input("Inset the Max of a single subject: "))
+        break
+    except:
+        print("\tError: Maxume makrs must be number")
+        playsound('Porgram_Data/Error.wav') 
+
 while(True):
     try:
         Class = int(input("Inset only Class name in numbers: "))
-        if 0<=Class and 12>=Class:
+        if 1<=Class and 12>=Class:
             break
         else:
-            print("\tError: The marks must be between 0 and 12.")
+            print("\tError: The Class must be between 1 and 12.")
             playsound('Porgram_Data/Error.wav') 
     except:
         playsound('Porgram_Data/Error.wav')
-        print("\tTry again")
+        print("\tError: Class must be a number")
 
-Class_section = input(f"Inset the the section fo class {Class}: ")
+while True:
+    Class_section = input(f"Inset the the section fo class : ")
+    if Class_section.isalpha():
+        if len(Class_section) == 1:
+            break
+        else:
+            print("\tError: Section must be a single 'alphabetic characters'")
+            playsound('Porgram_Data/Error.wav')
+    else:
+        print("\tError: section must be a 'alphabetic characters'")
+        playsound('Porgram_Data/Error.wav')
 
-with open(f'Output/Percentage_Output_of_class_{Class}{Class_section.capitalize()}.csv', 'w') as f:
-    for hedder in mylist:
-        f.write(str(hedder))
-        if hedder != 'Percentage':
-            f.write(str(','))
+file_name = "Percentage_Output_of_class_"
+
+if(not os.path.exists(f'Output/{file_name}{Class}{Class_section.title()}.csv')):
+
+    mylist = ['Name','English','Maths','Hindi','Sst','Science','Total Marks','Percentage']
+    with open(f'Output/{file_name}{Class}{Class_section.title()}.csv', 'w') as f:
+        for hedder in mylist:
+            f.write(str(hedder))
+            if hedder != 'Percentage':
+                f.write(str(','))
 
 while True:
     student_name = input("Insert the name of sudent or enter exit to close: ")
-    student_name = student_name.lower().capitalize()
+    student_name = student_name.title()
     if student_name.find("Exit") == 0:
         break
     else:
-        with open(f'Output/Percentage_Output_of_class_{Class}{Class_section.capitalize()}.csv','a') as file_write:
+        with open(f'Output/{file_name}{Class}{Class_section.title()}.csv','a') as file_write:
             file_write.write(f"\n{str(student_name)},")
 
             total_marks = 0
@@ -37,26 +62,29 @@ while True:
                 while True:
                     try:
                         marks = float(input(f"Inset the mark of {student_name} in subject {subject}: "))
-                        if 0<=marks and 100>=marks:
+                        if 0<=marks and max_marks>=marks:
                             break
                         else:
-                            print("\tError: The marks must be between 0 and 100.")
+                            print(f"\tError: The marks must be between 0 and {max_marks}.")
                             playsound('Porgram_Data/Error.wav')
                     except ValueError:
                         print("\tError: The Insert Value must be a number.")
                         playsound('Porgram_Data/Error.wav')
                 total_marks += marks
                 file_write.write(str(f"{marks},"))
-            percentage = (total_marks / 500) * 100
-            file_write.write(str(f"{total_marks}/500,"))
-            file_write.write(str(f"{'%.2f'% percentage}%,"))
+
+            a = max_marks*len(subject_list)
+            percentage = (total_marks / a) * 100
+            percentage = float('%.2f'% percentage)
+            file_write.write(str(f"{total_marks}/{max_marks},"))
+            file_write.write(str(f"{percentage}%,"))
             playsound('Porgram_Data/pop.wav')
 
         if percentage>=60:
-            print(f"\t{student_name} got {'%.2f'% percentage}% and passed with first divison.\n")
+            print(f"\t{student_name} got {percentage}% and passed with first divison.\n")
         elif percentage>=40:
-            print(f"\t{student_name} got {'%.2f'% percentage}% and passed with secound divison.\n")
+            print(f"\t{student_name} got {percentage}% and passed with secound divison.\n")
         elif percentage>=33:
-            print(f"\t{student_name} got {'%.2f'% percentage}% and passed with third divison.\n")
+            print(f"\t{student_name} got {percentage}% and passed with third divison.\n")
         else:
-            print(f"\t{student_name} got {'%.2f'% percentage}% and {student_name} is fail\n")
+            print(f"\t{student_name} got {percentage}% and {student_name} is fail\n")

@@ -14,6 +14,8 @@ for subject in subject_list:
 >>> marks = float(input(f"Inset the mark of {student_name} in subject {subject}: "))
 >>> total_marks +=1
 >>> file_write.write(str(f"{marks},"))
+
+# open Main.py to know more
 ```
 
 * After the marks have been obtained, the program adds 100 to the `total_marks` (since each subject is worth 100 marks) and adds the user's marks to `marks`. This allows us to keep track of the total number of marks available and the number of marks the user has obtained.
@@ -33,9 +35,6 @@ for subject in subject_list:
 ![](https://user-images.githubusercontent.com/84720825/212041632-814f0704-3797-4f66-b458-226e1c65bf9f.png)
 ## :page_with_curl: **Important note**
 * If you wants to save the program Inset `exit` while Inset the name of student.
-* Don not delete or move the output folder.
-*  You can delete the csv file of output folder.
-* If you delete output folder then make a foler with same name Output
 ## :traffic_light: **Known issues**
 - [x] You have to use terminal to run this program.
 - [ ] Currently **`GUI`** **(Graphical user interface)** is not Ceated for this project.
