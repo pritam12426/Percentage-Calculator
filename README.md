@@ -1,4 +1,4 @@
-![temporary](https://user-images.githubusercontent.com/84720825/212024726-9a0f0c47-597c-4683-bc81-880949263eb2.png)
+![Percentage Calculate](https://user-images.githubusercontent.com/84720825/213391657-b3ca1797-37be-4562-bddf-748ac8a72ec1.png)
 
 ### The function Percentage calculator asks the user for their marks in 5 subjects, calculate the percentage, and prints the result and provide the result in a *Excel* file.
 ----
@@ -32,9 +32,11 @@ for subject in subject_list:
 4. Run this **`.exe`** file of`Percantage_Calculater` at last of that foler
 5. Start Inserting the data as per given ***instruction***
 6. At last you will get `Percentage_Output.csv` in output file and it will look like this in Excel 👇
-![](https://user-images.githubusercontent.com/84720825/212041632-814f0704-3797-4f66-b458-226e1c65bf9f.png)
-## :page_with_curl: **Important note**
-* If you wants to save the program Inset `exit` while Inset the name of student.
+![CHOTI-DHNNO_Visual-Studio-Code_2023_01_20_9](https://user-images.githubusercontent.com/84720825/213683162-4b5cf19f-434a-44cd-bd72-767ac8b6c36d.png)* If you wants to save the program Inset `exit` while Inset the name of student.
+
 ## :traffic_light: **Known issues**
 - [x] You have to use terminal to run this program.
 - [ ] Currently **`GUI`** **(Graphical user interface)** is not Ceated for this project.
+
+## Feedback
+If you have any feedback, please reach out to us at [here](https://github.com/pritam12426/Percentage-Calculator/issues/new)

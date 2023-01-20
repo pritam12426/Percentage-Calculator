@@ -1,14 +1,16 @@
 import os
 from playsound import playsound
+from plyer import notification
+
 
 if(not os.path.exists("Output")):
     os.mkdir("Output")
 while True:
     try:
-        max_marks = int(input("Inset the Max of a single subject: "))
+        max_marks = int(input("Inset the maximum of a single subject: "))
         break
     except:
-        print("\tError: Maxume makrs must be number")
+        print("\tError: Maximum single subject makrs must be number")
         playsound('Porgram_Data/Error.wav') 
 
 while(True):
@@ -24,7 +26,7 @@ while(True):
         print("\tError: Class must be a number")
 
 while True:
-    Class_section = input(f"Inset the the section fo class : ")
+    Class_section = input(f"Inset the the section fo class: ")
     if Class_section.isalpha():
         if len(Class_section) == 1:
             break
@@ -35,7 +37,7 @@ while True:
         print("\tError: section must be a 'alphabetic characters'")
         playsound('Porgram_Data/Error.wav')
 
-file_name = "Percentage_Output_of_class_"
+file_name = "Class_"
 
 if(not os.path.exists(f'Output/{file_name}{Class}{Class_section.title()}.csv')):
 
@@ -46,10 +48,17 @@ if(not os.path.exists(f'Output/{file_name}{Class}{Class_section.title()}.csv')):
             if hedder != 'Percentage':
                 f.write(str(','))
 
+h = 0
 while True:
     student_name = input("Insert the name of sudent or enter exit to close: ")
     student_name = student_name.title()
     if student_name.find("Exit") == 0:
+        if not h==0:
+            notification.notify(
+            title = "Percentage calculator",
+            message = f"A file of name {Class}_{Class_section.upper()} is save in Output folder.",
+            app_icon = "Porgram_Data/icon.ico",
+            timeout = 5)
         break
     else:
         with open(f'Output/{file_name}{Class}{Class_section.title()}.csv','a') as file_write:
@@ -76,9 +85,10 @@ while True:
             a = max_marks*len(subject_list)
             percentage = (total_marks / a) * 100
             percentage = float('%.2f'% percentage)
-            file_write.write(str(f"{total_marks}/{max_marks},"))
+            file_write.write(str(f"{total_marks}/{max_marks*len(subject_list)},"))
             file_write.write(str(f"{percentage}%,"))
             playsound('Porgram_Data/pop.wav')
+            h +=1
 
         if percentage>=60:
             print(f"\t{student_name} got {percentage}% and passed with first divison.\n")
@@ -88,3 +98,11 @@ while True:
             print(f"\t{student_name} got {percentage}% and passed with third divison.\n")
         else:
             print(f"\t{student_name} got {percentage}% and {student_name} is fail\n")
+
+# if not h ==0:
+#     notification.notify(
+#     title = "Percentage calculator",
+#     message = f"A file {Class ,Class_section} save in Output folder",
+#     app_icon = "Porgram_Data/icon.ico",
+#     timeout = 3
+# )
