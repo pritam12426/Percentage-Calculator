@@ -1,2 +1,5 @@
+Output
 *.txt
 *.csv
+.vscode
+test.py

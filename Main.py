@@ -1,13 +1,12 @@
-import os
-from playsound import playsound
-from plyer import notification
-
+import os # Os is bulit in module
+from playsound import playsound # Pip install playsound
+from plyer import notification # Pip install plyer
 
 if(not os.path.exists("Output")):
     os.mkdir("Output")
 while True:
     try:
-        max_marks = int(input("Inset the maximum of a single subject: "))
+        max_marks = int(input("Inset the maximum of a single subject >  "))
         break
     except:
         print("\tError: Maximum single subject makrs must be number")
@@ -15,18 +14,18 @@ while True:
 
 while(True):
     try:
-        Class = int(input("Inset only Class name in numbers: "))
+        Class = int(input("Inset only Class name in numbers >  "))
         if 1<=Class and 12>=Class:
             break
         else:
-            print("\tError: The Class must be between 1 and 12.")
+            print("\tError: The Class must lise between 1 and 12.")
             playsound('Porgram_Data/Error.wav') 
     except:
         playsound('Porgram_Data/Error.wav')
         print("\tError: Class must be a number")
 
 while True:
-    Class_section = input(f"Inset the the section fo class: ")
+    Class_section = input(f"Inset the the section fo class > ")
     if Class_section.isalpha():
         if len(Class_section) == 1:
             break
@@ -50,15 +49,15 @@ if(not os.path.exists(f'Output/{file_name}{Class}{Class_section.title()}.csv')):
 
 h = 0
 while True:
-    student_name = input("Insert the name of sudent or enter exit to close: ")
+    student_name = input("Insert the name of sudent or enter '-' to close > ")
     student_name = student_name.title()
-    if student_name.find("Exit") == 0:
+    if student_name.find("-") == 0:
         if not h==0:
             notification.notify(
             title = "Percentage calculator",
             message = f"A file of name {Class}_{Class_section.upper()} is save in Output folder.",
             app_icon = "Porgram_Data/icon.ico",
-            timeout = 5)
+            timeout = 3)
         break
     else:
         with open(f'Output/{file_name}{Class}{Class_section.title()}.csv','a') as file_write:
@@ -70,11 +69,11 @@ while True:
             for subject in subject_list:
                 while True:
                     try:
-                        marks = float(input(f"Inset the mark of {student_name} in subject {subject}: "))
+                        marks = float(input(f"Inset the mark of {student_name} in subject {subject} > "))
                         if 0<=marks and max_marks>=marks:
                             break
                         else:
-                            print(f"\tError: The marks must be between 0 and {max_marks}.")
+                            print(f"\tError: The marks must lise between 0 and {max_marks}.")
                             playsound('Porgram_Data/Error.wav')
                     except ValueError:
                         print("\tError: The Insert Value must be a number.")
@@ -98,11 +97,3 @@ while True:
             print(f"\t{student_name} got {percentage}% and passed with third divison.\n")
         else:
             print(f"\t{student_name} got {percentage}% and {student_name} is fail\n")
-
-# if not h ==0:
-#     notification.notify(
-#     title = "Percentage calculator",
-#     message = f"A file {Class ,Class_section} save in Output folder",
-#     app_icon = "Porgram_Data/icon.ico",
-#     timeout = 3
-# )
