@@ -22,8 +22,8 @@ while (True): # This will take input for class 1 to 12
             print("\tError: The Class must lise between 1 and 12.")
             playsound('Porgram_Data/Error.wav')
     except:
-        playsound('Porgram_Data/Error.wav')
         print("\tError: Class must be a number")
+        playsound('Porgram_Data/Error.wav')
 
 while (True): # Will take input for sec of class
     Class_section = input(f"Inset the the section fo class > ")
@@ -53,7 +53,7 @@ while (True):
     student_name = input("Insert the name of sudent or enter '-' to close > ")
     student_name = student_name.title()
     if student_name.find("-") == 0:
-        if not h == 0:
+        if h != 0:
             notification.notify(
                 title="Percentage calculator",
                 message=f"A file of name {Class}_{Class_section.upper()} is save in Output folder.",
@@ -69,18 +69,18 @@ while (True):
 
             for subject in subject_list:
                 while True:
+                    
                     try:
-                        marks = float(
-                            input(f"Inset the mark of {student_name} in subject {subject} > "))
+                        marks = float(input(f"Inset the mark of {student_name} in subject {subject} > "))
                         if 0 <= marks and max_marks >= marks:
                             break
                         else:
-                            print(
-                                f"\tError: The marks must lise between 0 and {max_marks}.")
+                            print(f"\tError: The marks must lise between 0 and {max_marks}.")
                             playsound('Porgram_Data/Error.wav')
                     except ValueError:
                         print("\tError: The Insert Value must be a number.")
                         playsound('Porgram_Data/Error.wav')
+
                 total_marks += marks
                 file_write.write(str(f"{marks},"))
 
