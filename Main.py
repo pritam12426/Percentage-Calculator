@@ -1,6 +1,9 @@
 import os  # Os is bulit in module
 from playsound import playsound  # Pip install playsound
 from plyer import notification  # Pip install plyer
+import colorama
+
+os.system("clear")
 
 if (not os.path.exists("Output")):
     os.mkdir("Output")
@@ -50,9 +53,10 @@ if (not os.path.exists(f'Output/{file_name}{Class}{Class_section.title()}.csv'))
 
 h = 0
 while (True):
-    student_name = input("Insert the name of sudent or enter '-' to close > ")
+    student_name = input("Insert the name of sudent or just hit enter to close > ")
     student_name = student_name.title()
-    if student_name.find("-") == 0:
+    if student_name == "":
+
         if h != 0:
             notification.notify(
                 title="Percentage calculator",
