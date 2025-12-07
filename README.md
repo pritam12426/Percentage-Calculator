@@ -33,5 +33,4 @@
 ### If you have any feedback, please reach out to us at [here](https://github.com/pritam12426/Percentage-Calculator/issues/new)
 
 
-
-# Help
+# help
